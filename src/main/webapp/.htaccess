@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "Access to the Admin mod"
+AuthUserFile /WEB-INF/.htpasswd
+Require valid-user

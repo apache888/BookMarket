@@ -32,11 +32,22 @@ CREATE TABLE book_genres (
 );
 
 CREATE TABLE book_authors (
-  book_id  BIGINT NOT NULL,
+  book_id   BIGINT NOT NULL,
   author_id BIGINT NOT NULL,
 
   FOREIGN KEY (book_id) REFERENCES book (id),
   FOREIGN KEY (author_id) REFERENCES author (id),
 
   UNIQUE (book_id, author_id)
+);
+
+CREATE TABLE orders (
+  id         BIGINT       NOT NULL IDENTITY PRIMARY KEY,
+  first_name VARCHAR(100) NOT NULL,
+  last_name  VARCHAR(100) NOT NULL,
+  address    VARCHAR(100) NOT NULL,
+  book_id    BIGINT       NOT NULL,
+  quantity   INT          NOT NULL,
+
+  FOREIGN KEY (book_id) REFERENCES book (id)
 );

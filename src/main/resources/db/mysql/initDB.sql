@@ -39,3 +39,15 @@ CREATE TABLE book_authors (
   UNIQUE (book_id, author_id)
 )
   ENGINE = InnoDB;
+
+CREATE TABLE orders (
+  id         BIGINT(20)   NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  first_name VARCHAR(100) NOT NULL,
+  last_name  VARCHAR(100) NOT NULL,
+  address    VARCHAR(100) NOT NULL,
+  book_id    BIGINT(20)   NOT NULL,
+  quantity   INT(20)      NOT NULL,
+
+  FOREIGN KEY (book_id) REFERENCES book (id)
+)
+  ENGINE = InnoDB;

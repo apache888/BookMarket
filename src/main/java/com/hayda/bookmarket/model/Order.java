@@ -8,7 +8,7 @@ import javax.persistence.*;
  * @author Roman Hayda
  */
 @Entity
-@Table(name = "order")
+@Table(name = "orders")
 public class Order {
 
     @Id

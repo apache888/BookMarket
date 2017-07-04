@@ -1,17 +1,20 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ page session="false" %>
 
-<html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<%@include file="/WEB-INF/jspf/left_menu.jspf" %>
 
-    <title>Book details</title>
-</head>
-<body>
+<%@include file="/WEB-INF/jspf/letters.jspf" %>
+<%--<html>--%>
+<%--<head>--%>
+    <%--<meta http-equiv="Content-Type" content="text/html; charset=utf-8">--%>
+    <%--<meta name="viewport" content="width=device-width, initial-scale=1">--%>
+
+    <%--<title>Book details</title>--%>
+<%--</head>--%>
+<%--<body>--%>
     <h1>Book details</h1>
     <table border="1">
         <tr>
@@ -127,5 +130,6 @@
 
         </table>
     </form:form>
-</body>
-</html>
+
+<%--</body>--%>
+<%--</html>--%>

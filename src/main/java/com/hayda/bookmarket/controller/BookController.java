@@ -6,12 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 /**
  * Created on 03.07.2017
@@ -26,9 +24,32 @@ public class BookController {
     private BookService bookService;
 
     @RequestMapping(value = "", method = RequestMethod.GET)
-    public String allBooks(Model model) {
-        model.addAttribute("bookList", bookService.getAllBooks());
-        return "books";
+    public String allBooks(Model model,
+                           @RequestParam(value = "search_string", required = false)String searchString,
+                           @RequestParam(value = "genre_id", required = false) String genreId,
+                           @RequestParam(value = "letter", required = false) String letter) {
+        List<Book> list;
+        if (!searchString.isEmpty()){
+            model.addAttribute("searchString", searchString);
+            list = bookService.getBooksBySearch(searchString);
+            model.addAttribute("bookList", list);
+            return "books";
+        }else
+        if (!genreId.isEmpty() && Long.valueOf(genreId) != 0){
+            model.addAttribute("genreId", genreId);
+            list = bookService.getBooksByGenre(Long.valueOf(genreId));
+            model.addAttribute("bookList", list);
+            return "books";
+        }else
+        if (!letter.isEmpty()){
+            model.addAttribute("letter", letter);
+            list = bookService.getBooksByLetter(letter);
+            model.addAttribute("bookList", list);
+            return "books";
+        } else{
+            model.addAttribute("bookList", bookService.getAllBooks());
+            return "books";
+        }
     }
 
     @RequestMapping(value = "", method = RequestMethod.POST)

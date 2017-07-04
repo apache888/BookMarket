@@ -1,33 +1,23 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" isELIgnored="false" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ page session="false" %>
 
-<html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<%@include file="/WEB-INF/jspf/left_menu.jspf" %>
 
-    <title>Books</title>
-</head>
-<body>
-    <h1>BOOKS</h1>
+<%@include file="/WEB-INF/jspf/letters.jspf" %>
+<div class="book_list">
+    <h5 style="text-align: left; margin-top:20px;">Найдено книг: ${bookList.size()} </h5>
+
+    <h2>BOOKS</h2>
     <c:if test="${!empty bookList}">
-        <table border="1">
-            <tr>
-                <th>ID</th>
-                <th>Title</th>
-            </tr>
+        <ul>
             <c:forEach items="${bookList}" var="book">
-                <tr>
-                    <td>${book.id}</td>
-                    <td><a href="<c:url value='/books/${book.id}' />"
-                           target="_self">${book.name}</a></td>
-                </tr>
+            <li>
+                <a href="<c:url value='/books/${book.id}' />" target="_self">${book.name}</a>
+            </li>
             </c:forEach>
-        </table>
+        </ul>
     </c:if>
-
-</body>
-</html>
+</div>

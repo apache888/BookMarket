@@ -25,6 +25,9 @@ public interface BookService {
 
     List<Author> getAuthorsByBookId(long id);
 
+    List<Book> getBooksByGenre(Long genreId);
 
+    List<Book> getBooksByLetter(String letter);
 
+    List<Book> getBooksBySearch(String searchString);
 }

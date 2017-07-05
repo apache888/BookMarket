@@ -1,7 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" isELIgnored="false" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ page session="false" %>
 
 <%@include file="/WEB-INF/jspf/left_menu.jspf" %>
@@ -10,7 +8,6 @@
 <div class="book_list">
     <h5 style="text-align: left; margin-top:20px;">Найдено книг: ${bookList.size()} </h5>
 
-    <h2>BOOKS</h2>
     <c:if test="${!empty bookList}">
         <ul>
             <c:forEach items="${bookList}" var="book">

@@ -3,14 +3,14 @@
     <h4>Жанры:</h4>
     <ul class="nav">
         <li><a href="/books">Все книги</a></li>
-        <c:forEach var="genre" items="genreList">
+        <c:forEach var="genre" items="${genreList}">
             <c:choose>
-                <%--<c:when test="${genreId !=0 && genreId == genre.id}">--%>
-                <c:when test="${! empty genreId}">
-                    <a style="color:red;" href="/books?genre_id=${genre.id}">${genre.name}</a>
+                <c:when test="${genreId !=0 && genreId == genre.id}">
+                <%--<c:when test="${! empty genreId}">--%>
+                    <li><a style="color:red;" href="/books?genre_id=${genre.id}">${genre.name}</a></li>
                 </c:when>
                 <c:otherwise>
-                    <a href="<c:url value='${pageContext.}/books?genre_id=${genre.id}'/>">${genre.name}</a>
+                    <li><a href="<c:url value='/books?genre_id=${genre.id}'/>">${genre.name}</a></li>
                 </c:otherwise>
             </c:choose>
         </c:forEach>

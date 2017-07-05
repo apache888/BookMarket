@@ -7,14 +7,6 @@
 <%@include file="/WEB-INF/jspf/left_menu.jspf" %>
 
 <%@include file="/WEB-INF/jspf/letters.jspf" %>
-<%--<html>--%>
-<%--<head>--%>
-    <%--<meta http-equiv="Content-Type" content="text/html; charset=utf-8">--%>
-    <%--<meta name="viewport" content="width=device-width, initial-scale=1">--%>
-
-    <%--<title>Book details</title>--%>
-<%--</head>--%>
-<%--<body>--%>
     <h1>Book details</h1>
     <table border="1">
         <tr>
@@ -130,6 +122,3 @@
 
         </table>
     </form:form>
-
-<%--</body>--%>
-<%--</html>--%>

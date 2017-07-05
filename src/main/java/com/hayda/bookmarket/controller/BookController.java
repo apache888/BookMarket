@@ -17,6 +17,7 @@ import java.util.List;
  * @author Roman Hayda
  */
 @Controller
+@SessionAttributes({"username","genreList","letterList"})
 @RequestMapping("/books")
 public class BookController {
 
@@ -25,9 +26,9 @@ public class BookController {
 
     @RequestMapping(value = "", method = RequestMethod.GET)
     public String allBooks(Model model,
-                           @RequestParam(value = "search_string", required = false)String searchString,
-                           @RequestParam(value = "genre_id", required = false) String genreId,
-                           @RequestParam(value = "letter", required = false) String letter) {
+                           @RequestParam(value = "search_string", required = false, defaultValue = "")String searchString,
+                           @RequestParam(value = "genre_id", required = false, defaultValue = "") String genreId,
+                           @RequestParam(value = "letter", required = false, defaultValue = "") String letter) {
         List<Book> list;
         if (!searchString.isEmpty()){
             model.addAttribute("searchString", searchString);

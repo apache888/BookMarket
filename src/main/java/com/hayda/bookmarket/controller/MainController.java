@@ -17,7 +17,6 @@ import org.springframework.web.context.annotation.SessionScope;
  */
 @Controller
 @SessionAttributes({"username","genreList","letterList"})
-//@SessionAttribute
 @SessionScope
 public class MainController {
     @Autowired

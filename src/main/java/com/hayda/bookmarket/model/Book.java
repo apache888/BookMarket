@@ -22,14 +22,14 @@ public class Book {
     @Column
     private String description;
 
-    @ManyToMany()
+    @ManyToMany
     @JoinTable(name="book_genres",
             joinColumns= @JoinColumn(name="book_id", referencedColumnName="id"),
             inverseJoinColumns= @JoinColumn(name="genre_id", referencedColumnName="id")
     )
     private List<Genre> genreList;
 
-    @ManyToMany()
+    @ManyToMany
     @JoinTable(name="book_authors",
             joinColumns= @JoinColumn(name="book_id", referencedColumnName="id"),
             inverseJoinColumns= @JoinColumn(name="author_id", referencedColumnName="id")

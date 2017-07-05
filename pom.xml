@@ -99,6 +99,13 @@
         <artifactId>mysql-connector-java</artifactId>
         <version>${mysql-connector.version}</version>
     </dependency>
+    <dependency>
+        <groupId>hsqldb</groupId>
+        <artifactId>hsqldb</artifactId>
+        <version>1.8.0.10</version>
+        <scope>test</scope>
+    </dependency>
+
 
     <dependency>
         <groupId>org.slf4j</groupId>

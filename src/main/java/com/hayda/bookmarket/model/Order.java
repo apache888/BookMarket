@@ -24,13 +24,62 @@ public class Order {
     @Column(nullable = false)
     private String address;
 
-    @ManyToOne
-    @JoinColumn(name="book_id", nullable=false, referencedColumnName="id")
-    private Book bookId;
+//    @ManyToOne
+//    @JoinColumn(name="book_id", nullable=false, referencedColumnName="id")
+    @Column(name = "book_id")
+    private long bookId;
 
     @Column(nullable = false)
     private int quantity;
 
     public Order() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public long getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(long bookId) {
+        this.bookId = bookId;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 }

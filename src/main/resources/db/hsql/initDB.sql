@@ -17,7 +17,7 @@ CREATE TABLE author (
 CREATE TABLE book (
   id          BIGINT       NOT NULL IDENTITY PRIMARY KEY,
   name        VARCHAR(100) NOT NULL,
-  discription VARCHAR(255) NOT NULL,
+  description VARCHAR(255) NOT NULL,
   price       DOUBLE       NOT NULL
 );
 

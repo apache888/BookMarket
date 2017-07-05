@@ -1,9 +1,11 @@
 package com.hayda.bookmarket.controller;
 
 import com.hayda.bookmarket.model.Book;
+import com.hayda.bookmarket.repository.BookDao;
 import com.hayda.bookmarket.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
@@ -62,11 +64,15 @@ public class BookController {
         return "redirect:/books";
     }
 
+
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    @Transactional
     public String getBookById(@PathVariable("id") long id, Model model) {
-        model.addAttribute("book", bookService.getBookById(id));
-        model.addAttribute("genres", bookService.getGenresByBookId(id));
-        model.addAttribute("authors", bookService.getAuthorsByBookId(id));
+        Book book = bookService.getBookById(id);
+        model.addAttribute("book", book);
+        model.addAttribute("genres", book.getGenreList());
+        model.addAttribute("authors", book.getAuthorList());
+
         return "bookDetails";
     }
 

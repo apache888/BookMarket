@@ -1,4 +1,3 @@
-INSERT  INTO genre VALUES (0, 'Все книги');
 INSERT  INTO genre  VALUES (1, 'Боевик');
 INSERT  INTO genre  VALUES (2, 'Военный');
 INSERT  INTO genre  VALUES (3, 'Исторический');

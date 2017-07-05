@@ -5,6 +5,9 @@ import com.hayda.bookmarket.model.Book;
 import com.hayda.bookmarket.model.Genre;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
@@ -13,6 +16,7 @@ import java.util.List;
  *
  * @author Roman Hayda
  */
+@Repository
 public interface BookDao extends JpaRepository<Book, Long> {
 
     @Query(value = "select g.* from genre g join book_genres on genre_id=g.id where book_id = ?1", nativeQuery = true)
@@ -27,6 +31,6 @@ public interface BookDao extends JpaRepository<Book, Long> {
     @Query(value = "select b.* from book b where substr(b.name,1,1)=?1 order by b.name limit 0,5", nativeQuery = true)
     List<Book> selectBooksByLetter(String letter);
 
-    @Query(value = "select b.* from book b where b.name like '%?1%' order by b.name limit 0,5", nativeQuery = true)
-    List<Book> selectBooksBySearch(String searchString);
+    @Query(value = "select b.* from book b where b.name like '%:par%' order by b.name limit 0,5", nativeQuery = true)
+    List<Book> selectBooksBySearch(@Param("par") String searchString);
 }

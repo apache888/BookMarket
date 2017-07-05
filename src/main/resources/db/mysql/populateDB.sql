@@ -1,4 +1,3 @@
-INSERT IGNORE INTO genre VALUES (0, 'Все книги');
 INSERT IGNORE INTO genre (name) VALUES ('Боевик');
 INSERT IGNORE INTO genre (name) VALUES ('Военный');
 INSERT IGNORE INTO genre (name) VALUES ('Исторический');

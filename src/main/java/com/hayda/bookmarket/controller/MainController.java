@@ -1,13 +1,12 @@
 package com.hayda.bookmarket.controller;
 
 import com.hayda.bookmarket.model.LetterList;
+import com.hayda.bookmarket.repository.GenreDao;
 import com.hayda.bookmarket.service.GenreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.annotation.SessionScope;
 
 /**

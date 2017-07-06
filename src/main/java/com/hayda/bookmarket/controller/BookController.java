@@ -1,8 +1,12 @@
 package com.hayda.bookmarket.controller;
 
+import com.hayda.bookmarket.model.Author;
 import com.hayda.bookmarket.model.Book;
+import com.hayda.bookmarket.model.Genre;
 import com.hayda.bookmarket.model.Order;
+import com.hayda.bookmarket.service.AuthorService;
 import com.hayda.bookmarket.service.BookService;
+import com.hayda.bookmarket.service.GenreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
@@ -25,6 +29,10 @@ public class BookController {
 
     @Autowired
     private BookService bookService;
+    @Autowired
+    private GenreService genreService;
+    @Autowired
+    private AuthorService authorService;
 
     @RequestMapping(value = "", method = RequestMethod.GET)
     public String allBooks(Model model,
@@ -71,8 +79,10 @@ public class BookController {
     public String getBookById(@PathVariable("id") long id, Model model) {
         Book book = bookService.getBookById(id);
         model.addAttribute("book", book);
-        model.addAttribute("genres", book.getGenreList());
-        model.addAttribute("authors", book.getAuthorList());
+        List<Genre> genreList = genreService.getGenresByBookId(id);
+        model.addAttribute("genres", genreList);
+        List<Author> authorList = authorService.getAuthorByBookId(id);
+        model.addAttribute("authors", authorList);
         model.addAttribute("order", new Order());
 
         return "bookDetails";

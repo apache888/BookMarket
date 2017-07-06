@@ -43,4 +43,10 @@ public class AuthorServiceImpl implements AuthorService {
     public List<Author> allAuthors() {
         return authorDao.findAll();
     }
+
+    @Override
+    @Transactional
+    public List<Author> getAuthorByBookId(long id) {
+        return authorDao.selectAuthorByBookId(id);
+    }
 }

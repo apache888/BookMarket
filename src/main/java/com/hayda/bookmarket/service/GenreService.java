@@ -18,4 +18,6 @@ public interface GenreService {
     void removeGenre(long id);
 
     List<Genre> allGenres();
+
+    List<Genre> getGenresByBookId(long id);
 }

@@ -19,4 +19,7 @@ public interface AuthorService {
 
     List<Author> allAuthors();
 
+    List<Author> getAuthorByBookId(long id);
+
+
 }

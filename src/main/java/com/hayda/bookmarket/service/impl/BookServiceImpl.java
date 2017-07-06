@@ -3,10 +3,13 @@ package com.hayda.bookmarket.service.impl;
 import com.hayda.bookmarket.model.Book;
 import com.hayda.bookmarket.repository.BookDao;
 import com.hayda.bookmarket.service.BookService;
+import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import java.util.List;
 
 /**
@@ -20,10 +23,19 @@ public class BookServiceImpl implements BookService {
     @Autowired
     private BookDao bookDao;
 
+//    @PersistenceContext
+//    private EntityManager entityManager;
+
     @Override
-    @Transactional(readOnly = true)
+    @Transactional
     public Book getBookById(long id) {
-        return bookDao.findOne(id);
+        Book book = bookDao.findOne(id);
+//        Book book = entityManager.find(Book.class, id);
+//        Hibernate.initialize(book.getAuthorList());
+//        Hibernate.initialize(book.getGenreList());
+//        book.getAuthorList().size();
+//        book.getGenreList().size();
+        return book;
     }
 
     @Override

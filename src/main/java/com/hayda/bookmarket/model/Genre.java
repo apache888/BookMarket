@@ -1,5 +1,7 @@
 package com.hayda.bookmarket.model;
 
+import lombok.AllArgsConstructor;
+
 import javax.persistence.*;
 
 /**
@@ -9,6 +11,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "genre")
+@AllArgsConstructor
 public class Genre {
 
     @Id

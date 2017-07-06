@@ -44,18 +44,6 @@ public class BookServiceImpl implements BookService {
         return bookDao.findAll();
     }
 
-//    @Override
-//    @Transactional
-//    public List<Genre> getGenresByBookId(long id) {
-//        return bookDao.selectGenreByBookId(id);
-//    }
-
-//    @Override
-//    @Transactional
-//    public List<Author> getAuthorsByBookId(long id) {
-//        return bookDao.selectAuthorByBookId(id);
-//    }
-
     @Override
     @Transactional
     public List<Book> getBooksByGenre(Long genreId) {

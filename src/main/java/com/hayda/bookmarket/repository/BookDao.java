@@ -16,16 +16,8 @@ import java.util.List;
 @Repository
 public interface BookDao extends JpaRepository<Book, Long> {
 
-//    @Query(value = "select g.* from genre g join book_genres on genre_id=g.id where book_id = ?1", nativeQuery = true)
-//    List<Genre> selectGenreByBookId(long id);
-//
-//    @Query(value = "select a.* from author a join book_authors on author_id=a.id where book_id = ?1", nativeQuery = true)
-//    List<Author> selectAuthorByBookId(long id);
-
-
 //    @Override
-//    @Query("select b from Book b, Genre g, Autor a left join fetch b.genreList on g.id = id" +
-//            " join fetch b.authorList on a.id = id where b.id= ?1")
+//    @Query("")
 //    Book findOne(Long id);
 
     @Query(value = "select b.* from book b join book_genres on book_id=b.id where genre_id =?1 order by b.name limit 0,10", nativeQuery = true)

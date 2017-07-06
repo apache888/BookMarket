@@ -7,7 +7,6 @@
 <%@include file="/WEB-INF/jspf/left_menu.jspf" %>
 
 <%@include file="/WEB-INF/jspf/letters.jspf" %>
-<%--<h1>Book details</h1>--%>
 <br/>
 <table border="1">
     <tr>

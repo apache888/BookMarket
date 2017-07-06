@@ -25,7 +25,7 @@ public class OrderController {
     @RequestMapping(value = "/order.do", method = RequestMethod.POST)
     public String doOrder(@ModelAttribute("order") @Validated Order order, Model model, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
-            return "redirect:/bookDetails";
+            return "redirect:/books/"+order.getBookId();
         }
         this.orderService.addOrder(order);
         return "redirect:/books/"+order.getBookId();

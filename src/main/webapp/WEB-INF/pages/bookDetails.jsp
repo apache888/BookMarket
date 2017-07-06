@@ -38,6 +38,7 @@
         <td>${book.description}</td>
         <td>${book.price}</td>
     </tr>
+
 </table>
 <br/>
 <br/>
@@ -46,12 +47,12 @@
     <table>
         <tr>
             <td>
-                <form:label path="firstName">
+                <form:label path="firstName" >
                     <spring:message text="First Name"/>
                 </form:label>
             </td>
             <td>
-                <form:input path="firstName"/>
+                <form:input path="firstName" />
             </td>
             <td>
                 <form:errors path="firstName"/>

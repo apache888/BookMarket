@@ -6,7 +6,6 @@
         <c:forEach var="genre" items="${genreList}">
             <c:choose>
                 <c:when test="${genreId !=0 && genreId == genre.id}">
-                <%--<c:when test="${! empty genreId}">--%>
                     <li><a style="color:red;" href="/books?genre_id=${genre.id}">${genre.name}</a></li>
                 </c:when>
                 <c:otherwise>

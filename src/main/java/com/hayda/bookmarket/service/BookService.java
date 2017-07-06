@@ -1,8 +1,6 @@
 package com.hayda.bookmarket.service;
 
-import com.hayda.bookmarket.model.Author;
 import com.hayda.bookmarket.model.Book;
-import com.hayda.bookmarket.model.Genre;
 
 import java.util.List;
 
@@ -21,9 +19,9 @@ public interface BookService {
 
     List<Book> getAllBooks();
 
-    List<Genre> getGenresByBookId(long id);
+//    List<Genre> getGenresByBookId(long id);
 
-    List<Author> getAuthorsByBookId(long id);
+//    List<Author> getAuthorsByBookId(long id);
 
     List<Book> getBooksByGenre(Long genreId);
 

@@ -1,7 +1,7 @@
 package com.hayda.bookmarket.controller;
 
 import com.hayda.bookmarket.model.Book;
-import com.hayda.bookmarket.repository.BookDao;
+import com.hayda.bookmarket.model.Order;
 import com.hayda.bookmarket.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -31,6 +31,7 @@ public class BookController {
                            @RequestParam(value = "search_string", required = false, defaultValue = "")String searchString,
                            @RequestParam(value = "genre_id", required = false, defaultValue = "") String genreId,
                            @RequestParam(value = "letter", required = false, defaultValue = "") String letter) {
+
         List<Book> list;
         if (!searchString.isEmpty()){
             model.addAttribute("searchString", searchString);
@@ -72,6 +73,7 @@ public class BookController {
         model.addAttribute("book", book);
         model.addAttribute("genres", book.getGenreList());
         model.addAttribute("authors", book.getAuthorList());
+        model.addAttribute("order", new Order());
 
         return "bookDetails";
     }

@@ -1,8 +1,6 @@
 package com.hayda.bookmarket.service.impl;
 
-import com.hayda.bookmarket.model.Author;
 import com.hayda.bookmarket.model.Book;
-import com.hayda.bookmarket.model.Genre;
 import com.hayda.bookmarket.repository.BookDao;
 import com.hayda.bookmarket.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,17 +44,17 @@ public class BookServiceImpl implements BookService {
         return bookDao.findAll();
     }
 
-    @Override
-    @Transactional
-    public List<Genre> getGenresByBookId(long id) {
-        return bookDao.selectGenreByBookId(id);
-    }
+//    @Override
+//    @Transactional
+//    public List<Genre> getGenresByBookId(long id) {
+//        return bookDao.selectGenreByBookId(id);
+//    }
 
-    @Override
-    @Transactional
-    public List<Author> getAuthorsByBookId(long id) {
-        return bookDao.selectAuthorByBookId(id);
-    }
+//    @Override
+//    @Transactional
+//    public List<Author> getAuthorsByBookId(long id) {
+//        return bookDao.selectAuthorByBookId(id);
+//    }
 
     @Override
     @Transactional

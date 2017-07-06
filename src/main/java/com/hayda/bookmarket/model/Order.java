@@ -1,6 +1,9 @@
 package com.hayda.bookmarket.model;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 /**
  * Created on 03.07.2017
@@ -16,20 +19,22 @@ public class Order {
     private Long id;
 
     @Column(name = "first_name", nullable=false)
+    @NotEmpty
     private String firstName;
 
     @Column(name = "last_name")
+    @NotEmpty
     private String lastName;
 
     @Column(nullable = false)
+    @NotEmpty
     private String address;
 
-//    @ManyToOne
-//    @JoinColumn(name="book_id", nullable=false, referencedColumnName="id")
     @Column(name = "book_id")
     private long bookId;
 
     @Column(nullable = false)
+    @NotNull
     private int quantity;
 
     public Order() {

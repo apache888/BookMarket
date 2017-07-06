@@ -23,18 +23,10 @@ public class BookServiceImpl implements BookService {
     @Autowired
     private BookDao bookDao;
 
-//    @PersistenceContext
-//    private EntityManager entityManager;
-
     @Override
     @Transactional
     public Book getBookById(long id) {
         Book book = bookDao.findOne(id);
-//        Book book = entityManager.find(Book.class, id);
-//        Hibernate.initialize(book.getAuthorList());
-//        Hibernate.initialize(book.getGenreList());
-//        book.getAuthorList().size();
-//        book.getGenreList().size();
         return book;
     }
 

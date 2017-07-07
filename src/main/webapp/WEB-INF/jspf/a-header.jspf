@@ -1,0 +1,35 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" isELIgnored="false" %>
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Онлайн магазин</title>
+        <link href="/resources/css/style_main.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+
+        <div class="container">
+
+            <div class="header">
+                <div class="logo">
+                    <a href="/main"><img src="/resources/images/library.png" alt="Логотип" name="logo"/></a>
+
+                </div>
+                <div class="welcome">
+                    <h5>Добро пожаловать, ${username} !</h5>
+                    <h6><a href="/">Выход</a></h6>
+                </div>
+                <%--<div class="search_form">--%>
+                    <%--<form name="search_form" method="GET" action="/books">--%>
+                        <%--<input type="text" name="search_string" value="${searchString}" size="110"/>--%>
+                        <%--<input class="search_button" type="submit" value="Поиск"/>--%>
+                        <%--&lt;%&ndash;<select name="search_option">&ndash;%&gt;--%>
+                            <%--&lt;%&ndash;<option>Название</option>&ndash;%&gt;--%>
+                            <%--&lt;%&ndash;<option>Автор</option>&ndash;%&gt;--%>
+                        <%--&lt;%&ndash;</select>&ndash;%&gt;--%>
+                    <%--</form>--%>
+                <%--</div>--%>
+            </div>

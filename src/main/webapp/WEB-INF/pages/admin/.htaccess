@@ -1,4 +1,20 @@
+
+resides
+AuthType Basic
+AuthName "Access to the Admin mod"
+AuthUserFile /WEB-INF/.htpasswd
+AuthGroupFile /dev/null
+Require valid-user
+
+deny from all
+
+Options All -Indexes
+
+<files .htaccess>
+order allow,deny
+deny from all
 AuthType Basic
 AuthName "Access to the Admin mod"
 AuthUserFile /WEB-INF/.htpasswd
 Require valid-user
+</files>

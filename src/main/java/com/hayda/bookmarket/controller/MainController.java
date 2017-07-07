@@ -29,7 +29,7 @@ public class MainController {
     }
 
     @RequestMapping("/main")
-    public String main(@RequestParam("username")String userName, Model model) {
+    public String main(@RequestParam(value = "username", required = false)String userName, Model model) {
         model.addAttribute( "username", userName);
         model.addAttribute("genreList", genreService.allGenres());
         model.addAttribute("letterList", letters.getRussianLetters());

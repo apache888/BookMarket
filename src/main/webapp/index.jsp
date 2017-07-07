@@ -30,5 +30,7 @@
             </div>
         </div>
 
+
+    <h3><a href="/admin/main">Admin page</a></h3>
     </body>
 </html>

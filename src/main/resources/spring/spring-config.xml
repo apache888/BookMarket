@@ -36,7 +36,10 @@
         <property name="dataSource" ref="dataSource"/>
         <property name="packagesToScan" value="com.hayda.bookmarket"/>
         <property name="jpaVendorAdapter">
-            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"/>
+            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" >
+                <property name="generateDdl" value="true"/>
+            </bean>
+
         </property>
         <property name="jpaProperties">
             <props>

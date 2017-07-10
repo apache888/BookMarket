@@ -40,7 +40,7 @@ CREATE TABLE book_authors (
 )
   ENGINE = InnoDB;
 
-CREATE TABLE orders (
+CREATE TABLE IF NOT EXISTS orders (
   id         BIGINT(20)   NOT NULL AUTO_INCREMENT PRIMARY KEY,
   first_name VARCHAR(100) NOT NULL,
   last_name  VARCHAR(100) NOT NULL,

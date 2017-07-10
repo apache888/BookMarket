@@ -10,27 +10,27 @@ INSERT  INTO genre  VALUES (9, 'Роман');
 INSERT  INTO genre  VALUES (10, 'Мистика');
 INSERT  INTO genre  VALUES (11, 'Ужасы');
 
-INSERT  INTO author (full_name) VALUES ('Первый автор');
-INSERT  INTO author (full_name) VALUES ('Второй автор');
-INSERT  INTO author (full_name) VALUES ('Третий автор');
-INSERT  INTO author (full_name) VALUES ('4й автор');
-INSERT  INTO author (full_name) VALUES ('5й автор');
-INSERT  INTO author (full_name) VALUES ('6й автор');
-INSERT  INTO author (full_name) VALUES ('7й автор');
-INSERT  INTO author (full_name) VALUES ('8й автор');
-INSERT  INTO author (full_name) VALUES ('9й автор');
-INSERT  INTO author (full_name) VALUES ('10й автор');
+INSERT  INTO author VALUES (1,'Первый автор');
+INSERT  INTO author VALUES (2, 'Второй автор');
+INSERT  INTO author VALUES (3, 'Третий автор');
+INSERT  INTO author VALUES (4, '4й автор');
+INSERT  INTO author VALUES (5, '5й автор');
+INSERT  INTO author VALUES (6, '6й автор');
+INSERT  INTO author VALUES (7, '7й автор');
+INSERT  INTO author VALUES (8, '8й автор');
+INSERT  INTO author VALUES (9, '9й автор');
+INSERT  INTO author VALUES (10, '10й автор');
 
-INSERT INTO book (name,description, price) VALUES ('Первая книга', 'Some information', 99.99);
-INSERT INTO book (name,description, price) VALUES ('Вторая книга', 'Some information', 199.99);
-INSERT INTO book (name,description, price) VALUES ('Белая книга', 'Some information', 89.99);
-INSERT INTO book (name,description, price) VALUES ('Красная книга', 'Some information', 69.99);
-INSERT INTO book (name,description, price) VALUES ('Черная книга', 'Some information', 100);
-INSERT INTO book (name,description, price) VALUES ('Золотая книга', 'Some information', 109.99);
-INSERT INTO book (name,description, price) VALUES ('Старая книга', 'Some information', 50.50);
-INSERT INTO book (name,description, price) VALUES ('Новая книга', 'Some information', 121.21);
-INSERT INTO book (name,description, price) VALUES ('Интересная книга', 'Some information', 121.21);
-INSERT INTO book (name,description, price) VALUES ('Лучшая книга', 'Some information', 199.99);
+INSERT INTO book VALUES (1, 'Первая книга', 'Some information', 99.99);
+INSERT INTO book VALUES (2, 'Вторая книга', 'Some information', 199.99);
+INSERT INTO book VALUES (3, 'Белая книга', 'Some information', 89.99);
+INSERT INTO book VALUES (4, 'Красная книга', 'Some information', 69.99);
+INSERT INTO book VALUES (5, 'Черная книга', 'Some information', 100);
+INSERT INTO book VALUES (6, 'Золотая книга', 'Some information', 109.99);
+INSERT INTO book VALUES (7, 'Старая книга', 'Some information', 50.50);
+INSERT INTO book VALUES (8, 'Новая книга', 'Some information', 121.21);
+INSERT INTO book VALUES (9, 'Интересная книга', 'Some information', 121.21);
+INSERT INTO book VALUES (10, 'Лучшая книга', 'Some information', 199.99);
 
 
 INSERT  INTO book_genres VALUES (1, 3);

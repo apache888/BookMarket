@@ -1,28 +1,28 @@
 deny from all
 
-Options All -Indexes
+#Options All -Indexes
 
 resides
 AuthType Basic
 AuthName "Access to the Admin mod"
-AuthUserFile /WEB-INF/.htpasswd
+AuthUserFile /BookMarket/WEB-INF/.htpasswd
 AuthGroupFile /dev/null
 Require valid-user
 
-<files .htaccess>
-order allow,deny
-deny from all
-AuthType Basic
-AuthName "Access to the Admin mod"
-AuthUserFile /WEB-INF/.htpasswd
-Require valid-user
-</files>
+#<files .htaccess>
+#order allow,deny
+#deny from all
+#AuthType Basic
+#AuthName "Access to the Admin mod"
+#AuthUserFile /BookMarket/WEB-INF/.htpasswd
+#Require valid-user
+#</files>
 
-<files "\.(jsp)$">
-order allow,deny
-deny from all
-AuthType Basic
-AuthName "Access to the Admin mod"
-AuthUserFile /WEB-INF/.htpasswd
-Require valid-user
-</files>
+#<files "\.(jsp)$">
+#order allow,deny
+#deny from all
+#AuthType Basic
+#AuthName "Access to the Admin mod"
+#AuthUserFile /BookMarket/WEB-INF/.htpasswd
+#Require valid-user
+#</files>

@@ -7,13 +7,11 @@
        xmlns:jpa="http://www.springframework.org/schema/data/jpa"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
 
-    <!--<import resource="security-config.xml"/>-->
     <jpa:repositories base-package="com.hayda.bookmarket.repository"/>
 
     <context:component-scan base-package="com.hayda.bookmarket"/>
     <context:annotation-config/>
     <context:property-placeholder location="classpath:database.properties"/>
-    <!--<context:property-placeholder location="classpath:validation.properties"/>-->
 
     <!-- Database-->
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
@@ -23,14 +21,6 @@
         <property name="password" value="${jdbc.password}"/>
     </bean>
 
-    <!-- Initializing database -->
-    <!--<jdbc:embedded-database type="HSQL" database-name="bookmarket" />-->
-
-    <jdbc:initialize-database data-source="dataSource">
-        <jdbc:script location="${jdbc.initLocation}"/>
-        <jdbc:script location="${jdbc.dataLocation}"/>
-    </jdbc:initialize-database>
-
     <!-- Entity Manager-->
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="dataSource" ref="dataSource"/>
@@ -39,7 +29,6 @@
             <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" >
                 <property name="generateDdl" value="true"/>
             </bean>
-
         </property>
         <property name="jpaProperties">
             <props>
@@ -51,13 +40,18 @@
                 <prop key="hibernate.show_sql">true</prop>
                 <prop key="hibernate.format_sql">true</prop>
                 <!--<prop key="hibernate.hbm2ddl.auto">update</prop>-->
-                <!--<prop key="hibernate.connection.autocommit">false</prop>-->
-                <!--<prop key="hibernate.current_session_context_class">thread</prop>-->
                 <!--<prop key="hibernate.enable_lazy_load_no_trans">true</prop>-->
-
             </props>
         </property>
     </bean>
+
+    <!-- Initializing database -->
+    <!--<jdbc:embedded-database type="HSQL" database-name="bookmarket" />-->
+
+    <!--<jdbc:initialize-database data-source="dataSource">-->
+        <!--<jdbc:script location="${jdbc.initLocation}"/>-->
+        <!--<jdbc:script location="${jdbc.dataLocation}"/>-->
+    <!--</jdbc:initialize-database>-->
 
     <bean id="transactionManager"
           class="org.springframework.orm.jpa.JpaTransactionManager">
@@ -65,6 +59,5 @@
     </bean>
 
     <tx:annotation-driven/>
-
 
 </beans>

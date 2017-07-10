@@ -13,7 +13,6 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -65,16 +64,6 @@ public class BookController {
         }
     }
 
-    @RequestMapping(value = "", method = RequestMethod.POST)
-    public String addBook(@ModelAttribute("book") @Valid Book book, BindingResult result){
-        if (result.hasErrors()) {
-            return "redirect:/books";
-        }
-        this.bookService.addBook(book);
-        return "redirect:/books";
-    }
-
-
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     @Transactional
     public String getBookById(@PathVariable("id") long id, Model model) {
@@ -89,17 +78,27 @@ public class BookController {
         return "bookDetails";
     }
 
+    //Admin part
+    @RequestMapping(value = "", method = RequestMethod.POST)
+    public String addBook(@ModelAttribute("book") @Valid Book book, BindingResult result){
+        if (result.hasErrors()) {
+            return "redirect:/admin/books";
+        }
+        this.bookService.addBook(book);
+        return "redirect:/admin/books";
+    }
+
     @RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
     public String updateBook(@PathVariable("id") long id, Model model) {
         model.addAttribute("book", bookService.getBookById(id));
         model.addAttribute("bookList", bookService.getAllBooks());
-        return "books";
+        return "admin/books";
     }
 
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
     public String deleteBook(@PathVariable("id") long id) {
         this.bookService.removeBook(id);
-        return "redirect:/books";
+        return "redirect:/admin/books";
     }
 
 }

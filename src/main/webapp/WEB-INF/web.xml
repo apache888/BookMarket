@@ -66,13 +66,5 @@
             <include-prelude>/WEB-INF/jspf/header.jspf</include-prelude>
             <include-coda>/WEB-INF/jspf/footer.jspf</include-coda>
         </jsp-property-group>
-
-        <!--<jsp-property-group>-->
-            <!--<display-name>header_and_footer</display-name>-->
-            <!--<url-pattern>/WEB-INF/admin/*</url-pattern>-->
-            <!--<page-encoding>UTF-8</page-encoding>-->
-            <!--<include-prelude>/WEB-INF/jspf/a-header.jspf</include-prelude>-->
-            <!--<include-coda>/WEB-INF/jspf/a-footer.jspf</include-coda>-->
-        <!--</jsp-property-group>-->
     </jsp-config>
 </web-app>

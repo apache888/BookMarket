@@ -29,8 +29,8 @@
         </td>
         <td>
             <c:if test="${!empty authors}">
-                <c:forEach var="author" items="${authors}">
-                    <li>${author.fullName}</li>
+                <c:forEach var="genre" items="${authors}">
+                    <li>${genre.fullName}</li>
                 </c:forEach>
             </c:if>
         </td>

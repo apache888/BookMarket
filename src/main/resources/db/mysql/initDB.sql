@@ -1,13 +1,16 @@
+
 CREATE TABLE IF NOT EXISTS genre (
   id   BIGINT(20)   NOT NULL AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(100) NOT NULL
 )
+  DEFAULT CHARACTER SET utf8,
   ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS author (
   id        BIGINT(20)   NOT NULL AUTO_INCREMENT PRIMARY KEY,
   full_name VARCHAR(255) NOT NULL
 )
+  DEFAULT CHARACTER SET utf8,
   ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS book (
@@ -16,9 +19,10 @@ CREATE TABLE IF NOT EXISTS book (
   description VARCHAR(255) NOT NULL,
   price       DOUBLE       NOT NULL
 )
+  DEFAULT CHARACTER SET utf8,
   ENGINE = InnoDB;
 
-CREATE TABLE book_genres (
+CREATE TABLE IF NOT EXISTS book_genres (
   book_id  BIGINT(20) NOT NULL,
   genre_id BIGINT(20) NOT NULL,
 
@@ -27,9 +31,10 @@ CREATE TABLE book_genres (
 
   UNIQUE (book_id, genre_id)
 )
+  DEFAULT CHARACTER SET utf8,
   ENGINE = InnoDB;
 
-CREATE TABLE book_authors (
+CREATE TABLE IF NOT EXISTS book_authors (
   book_id  BIGINT(20) NOT NULL,
   author_id BIGINT(20) NOT NULL,
 
@@ -38,6 +43,7 @@ CREATE TABLE book_authors (
 
   UNIQUE (book_id, author_id)
 )
+  DEFAULT CHARACTER SET utf8,
   ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS orders (
@@ -50,4 +56,5 @@ CREATE TABLE IF NOT EXISTS orders (
 
   FOREIGN KEY (book_id) REFERENCES book (id)
 )
+  DEFAULT CHARACTER SET utf8,
   ENGINE = InnoDB;

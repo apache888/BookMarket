@@ -26,10 +26,10 @@
     <!-- Initializing database -->
     <!--<jdbc:embedded-database type="HSQL" database-name="bookmarket" />-->
 
-    <!--<jdbc:initialize-database data-source="dataSource">-->
-        <!--<jdbc:script location="${jdbc.initLocation}"/>-->
-        <!--<jdbc:script location="${jdbc.dataLocation}"/>-->
-    <!--</jdbc:initialize-database>-->
+    <jdbc:initialize-database data-source="dataSource">
+        <jdbc:script location="${jdbc.initLocation}"/>
+        <jdbc:script location="${jdbc.dataLocation}"/>
+    </jdbc:initialize-database>
 
     <!-- Entity Manager-->
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
